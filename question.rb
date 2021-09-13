@@ -1,13 +1,16 @@
 class Question 
 
+  attr_reader :answer
+
   def initialize
+    @player = player
     @min = rand(1...20)
     @max = rand(1...20)
     @answer = @min + @max
   end
 
   def new_question
-    puts "What is #{@min} + #{@max}?"
+    puts "#{@player}, What is #{@min} + #{@max}?"
   end
 
   def validate(input)
