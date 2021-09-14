@@ -1,18 +1,26 @@
 class Player
 
-  attr_accessor :lives, :name
+  attr_reader :name, :lives
 
   def initialize(name)
-    @lives = 3
     @name = name
+    @lives = 3   
   end
 
   def lose_life
     @lives = @lives - 1
   end
+
+  def is_alive
+    @lives > 0
+  end
+
+  def updated_lives
+    "#{lives}/3"
+  end
 end
 
 
-p = Player.new("Dennis Reynolds")
-puts p.name
-puts p.lives
+# p = Player.new("Dennis Reynolds")
+# puts p.name
+# puts p.lives
